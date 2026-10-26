@@ -2,49 +2,65 @@
 
 ### Development using Java JDBC and MySQL
 
-A console-based Java application developed to manage student academic records, course enrollment, assessment marks, attendance, internal marks, and final results for the Kongu Engineering College (R2024) academic system project.
+A console-based Java application for managing student details, courses, enrollments, assessment marks, attendance, internal marks, and final results.
 
 ---
 
-## 1. Project Overview
+## 1. Project Resources
 
-The **KEC Student Academic & Continuous Evaluation System** is a database-driven application developed using Java, JDBC, and MySQL. The system provides a simple way to store, retrieve, and manage student academic information through a terminal-based menu.
+### 🎥 Project Demonstration Video
 
-The project demonstrates Java database connectivity, SQL operations, object-oriented programming, and database management. It aims to reduce manual record management and improve the organization of academic information.
+Watch the project demonstration to understand the application, its features, and how it runs in the terminal.
 
-## 2. Objectives
+**[▶ Watch Project Demo Video](Video/project_explain.mp4)**
+
+### 📄 Project Documentation
+
+The complete project report includes the aim, objectives, procedure, database design, implementation details, output screenshots, and conclusion.
+
+**[📄 View Project Documentation](Documents/JDBC%20Mini%20Project.docx)**
+
+---
+
+## 2. Project Overview
+
+The **KEC Student Academic & Continuous Evaluation System** is developed using Java, JDBC, and MySQL to simplify the management of student academic records.
+
+The application provides a menu-driven interface through which users can add student details, manage courses, enroll students, enter assessment marks, update attendance, calculate internal marks, and view final results.
+
+This project demonstrates Java database connectivity, SQL operations, object-oriented programming, and relational database management.
+
+## 3. Objectives
 
 - To maintain student details in a centralized database.
 - To manage course information and student enrollment.
 - To record and retrieve assessment marks.
-- To calculate attendance percentages.
-- To calculate internal marks based on configured assessment rules.
-- To display student marks and final results.
-- To demonstrate Java JDBC connectivity with MySQL.
-- To provide a simple menu-driven interface for academic record management.
+- To calculate and display attendance percentages.
+- To calculate internal marks using the implemented evaluation rules.
+- To display student academic performance and final results.
+- To demonstrate database connectivity using Java JDBC and MySQL.
+- To reduce manual work in academic record management.
 
-## 3. Technologies Used
+## 4. Technologies Used
 
 | Technology | Purpose |
 |---|---|
 | Java | Application development |
-| JDBC | Connecting Java with MySQL |
-| MySQL Server | Storing academic records |
-| MySQL Workbench | Creating and managing database tables |
-| Eclipse IDE | Writing and executing Java programs |
+| JDBC | Java–MySQL connectivity |
+| MySQL Server | Database management |
+| MySQL Workbench | Database creation and administration |
+| Eclipse IDE | Java coding and execution |
 | Windows Terminal | Running and testing the application |
 | Git and GitHub | Version control and project hosting |
 
-## 4. Main Features
+## 5. Main Features
 
 ### Student Management
-- Add student records.
-- Store student details in the database.
-- Retrieve student information.
+- Add student details.
+- Store and retrieve student records.
 
 ### Course Management
-- Add course details.
-- Maintain course information for academic records.
+- Add courses and maintain course information.
 
 ### Student Enrollment
 - Enroll students in courses.
@@ -52,8 +68,7 @@ The project demonstrates Java database connectivity, SQL operations, object-orie
 
 ### Assessment Marks
 - Enter assessment marks.
-- Store assessment information.
-- Retrieve student marks.
+- Store and retrieve marks from the database.
 
 ### Attendance Management
 - Update attendance records.
@@ -61,30 +76,15 @@ The project demonstrates Java database connectivity, SQL operations, object-orie
 - Identify students based on configured attendance thresholds.
 
 ### Internal Marks
-- Calculate and display internal assessment marks using the implemented rules.
+- Calculate and display internal marks according to the implemented rules.
 
 ### Final Results
 - Display student academic results.
-- Combine available assessment information according to the implemented evaluation logic.
-
-## 5. Database Design
-
-The project uses the MySQL database `kec_academic`.
-
-The main tables are:
-
-| Table | Description |
-|---|---|
-| `students` | Stores student details |
-| `courses` | Stores course information |
-| `enrollments` | Maintains student enrollment in courses |
-| `assessment_marks` | Stores assessment marks |
-
-These tables help organize academic information and establish relationships between students, courses, enrollments, and assessments.
+- Evaluate results based on the configured assessment logic.
 
 ## 6. Application Menu
 
-The application provides the following menu options:
+The application provides the following console menu:
 
 1. Add Student
 2. Add Course
@@ -97,36 +97,58 @@ The application provides the following menu options:
 9. View Final Result
 0. Exit
 
-## 7. Project Structure
+## 7. Database Design
+
+The project uses a MySQL database named `kec_academic`.
+
+The main database tables are:
+
+| Table | Description |
+|---|---|
+| `students` | Stores student details |
+| `courses` | Stores course information |
+| `enrollments` | Maintains student enrollment records |
+| `assessment_marks` | Stores assessment marks |
+
+These tables organize academic information and maintain relationships between students, courses, enrollments, and assessment records.
+
+## 8. Project Structure
 
 ```text
-KEC_Student_Academic/
+JAVA_project1/
 │
-├── src/
-│   ├── DBConnection.java
-│   ├── StudentDAO.java
-│   ├── CourseDAO.java
-│   ├── EnrollmentDAO.java
-│   ├── AssessmentDAO.java
-│   ├── ViewMarksDAO.java
-│   ├── AttendanceDAO.java
-│   ├── AttendancePercentageDAO.java
-│   ├── InternalMarksDAO.java
-│   ├── FinalResultDAO.java
-│   └── MainMenu.java
+├── KEC_Student_Academic/
+│   ├── src/
+│   │   ├── DBConnection.java
+│   │   ├── StudentDAO.java
+│   │   ├── CourseDAO.java
+│   │   ├── EnrollmentDAO.java
+│   │   ├── AssessmentDAO.java
+│   │   ├── ViewMarksDAO.java
+│   │   ├── AttendanceDAO.java
+│   │   ├── AttendancePercentageDAO.java
+│   │   ├── InternalMarksDAO.java
+│   │   ├── FinalResultDAO.java
+│   │   └── MainMenu.java
+│   ├── bin/
+│   ├── .classpath
+│   ├── .project
+│   └── README.md
 │
-├── bin/
-├── .classpath
-├── .project
-├── .gitignore
+├── Documents/
+│   └── JDBC Mini Project.docx
+│
+├── Video/
+│   └── project_explain.mp4
+│
 └── README.md
 ```
 
-*Note: The file list above describes the intended project organization. Adjust it if your actual source files differ.*
+*Note: This is the intended folder structure. Adjust the file names or locations if your actual repository differs.*
 
-## 8. Requirements
+## 9. System Requirements
 
-Before running the project, install:
+The following software is required to run the project:
 
 - Java Development Kit (JDK)
 - MySQL Server
@@ -134,101 +156,84 @@ Before running the project, install:
 - Eclipse IDE or another Java development environment
 - Windows Terminal or Command Prompt
 
-## 9. Database Configuration
+## 10. Database Configuration
 
 1. Start the MySQL Server.
 2. Open MySQL Workbench.
-3. Create or select the database named `kec_academic`.
+3. Create or select the database `kec_academic`.
 4. Create the required tables: `students`, `courses`, `enrollments`, and `assessment_marks`.
-5. Open `DBConnection.java`.
+5. Open `DBConnection.java` in the Java project.
 6. Configure the database URL, username, and password for your local MySQL installation.
-7. Ensure that the MySQL Connector/J library is included in the Java classpath.
+7. Add the MySQL Connector/J JAR file to the Java project's classpath.
 
-**Security note:** Do not upload your real database password to GitHub. Use a local configuration or environment variable for credentials.
+**Security:** Never upload your actual database password to GitHub. Use a local configuration or environment variable to store credentials.
 
-## 10. How to Run the Project
+## 11. How to Run the Project
 
-Open Command Prompt or Windows Terminal and navigate to the project directory.
+### Step 1: Open the project directory
+
+Open Command Prompt or Windows Terminal and execute:
 
 ```cmd
 cd /d "C:\Users\pavit\eclipse-workspace\KEC_Student_Academic"
 ```
 
-Compile the Java source files using the MySQL Connector/J library:
+### Step 2: Compile the Java files
+
+Replace the example JAR path below with the actual location of your MySQL Connector/J file.
 
 ```cmd
 javac -cp "C:\path\to\mysql-connector-j.jar" -d bin src\*.java
 ```
 
-Replace `C:\path\to\mysql-connector-j.jar` with the actual path to your downloaded connector JAR file.
-
-Run the application:
+### Step 3: Run the application
 
 ```cmd
 java -cp "bin;C:\path\to\mysql-connector-j.jar" MainMenu
 ```
 
-Make sure MySQL is running and the database connection settings are correct before starting the application.
+Ensure that MySQL Server is running and the database credentials are correct before executing the application.
 
-## 11. Project Demo Video
+## 12. Expected Output
 
-The project demonstration video explains the application, its features, and the execution process.
+When the application executes successfully, the terminal displays the main menu. Users can select the required options to manage students, courses, enrollments, assessment marks, attendance, internal marks, and final results.
 
-**Video file:** `Video/project_explain.mp4`
+The application communicates with MySQL through JDBC to insert, update, and retrieve academic records.
 
-[▶ View or download the project demonstration video](Video/project_explain.mp4)
+## 13. Advantages
 
-The video demonstrates the terminal-based application and its main academic management operations.
+- Centralized academic record management.
+- Reduced manual data entry and record maintenance.
+- Faster retrieval of student information.
+- Organized course enrollment and assessment records.
+- Improved accessibility of attendance and marks information.
+- Practical demonstration of Java database connectivity.
 
-## 12. Project Documentation
-
-The complete project report contains the project explanation, objectives, procedure, database details, implementation information, screenshots, and results.
-
-**Documentation file:** `Documents/JDBC Mini Project.docx`
-
-[📄 View or download the project documentation](Documents/JDBC%20Mini%20Project.docx)
-
-## 13. Expected Output
-
-When the application runs successfully, the terminal displays the main menu. Users can select options to add students, add courses, enroll students, record assessment marks, update attendance, view internal marks, and display final results.
-
-The application retrieves and updates information through JDBC connections to the MySQL database.
-
-## 14. Advantages
-
-- Centralized storage of academic information.
-- Reduced manual record maintenance.
-- Faster retrieval of student marks and attendance details.
-- Organized course enrollment records.
-- Practical demonstration of Java and database integration.
-- Easier testing and maintenance of academic data.
-
-## 15. Limitations
+## 14. Limitations
 
 - The application uses a console-based interface.
-- Database access requires a running MySQL Server.
-- Results depend on the data entered and the evaluation rules implemented.
-- The configured evaluation rules should not be assumed to represent official institutional regulations unless verified.
+- MySQL Server must be available for database operations.
+- Results depend on the entered data and implemented evaluation rules.
+- Institutional grading and attendance rules should be verified before real-world use.
 
-## 16. Future Enhancements
+## 15. Future Enhancements
 
 - Develop a graphical user interface or web application.
-- Add student and administrator login.
-- Introduce data validation and improved error handling.
+- Add student and administrator authentication.
 - Generate downloadable academic reports.
-- Add automated backups and improved security.
-- Configure verified institutional grading and attendance rules.
+- Improve input validation and error handling.
+- Add secure user roles and access control.
+- Implement verified institutional grading rules.
 
-## 17. Conclusion
+## 16. Conclusion
 
-The KEC Student Academic & Continuous Evaluation System was developed using Java JDBC and MySQL to manage student details, courses, enrollments, assessment marks, attendance, internal marks, and final results. The application demonstrates database connectivity and common database operations through a terminal-based menu. It provides a foundation for a more comprehensive academic record management system.
+The KEC Student Academic & Continuous Evaluation System was developed using Java JDBC and MySQL to manage student details, courses, enrollments, assessment marks, attendance, internal marks, and final results. The application demonstrates database connectivity and academic record management through a terminal-based menu. It provides a foundation for future improvements to academic information management.
 
-## 18. Repository
+## 17. GitHub Repository
 
-**GitHub Repository:**  
-https://github.com/Sharanv2008-web/JAVA_project1
+**Repository:** [JAVA_project1 on GitHub](https://github.com/Sharanv2008-web/JAVA_project1)
 
-The repository contains the project source code and supporting materials, including the documentation and demonstration video.
+The repository is intended to contain the Java source code, project report, demonstration video, and supporting files.
 
 ---
 
